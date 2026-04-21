@@ -1,0 +1,41 @@
+.App {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Main content container that accounts for navbar */
+.App > *:not(.navigation-bar):not(.mobile-control-panel):not(.github-link) {
+  flex: 1;
+  min-height: 0; /* Allow flex child to shrink below content size */
+}
+
+/* Ensure simulation takes full available space */
+.App > div[style*="width: 100%; height: 100%"] {
+  flex: 1;
+  overflow: hidden;
+}
+
+.dg.main .close-button {
+  background-color: rgb(255, 0, 255);
+}
+
+.dg.main {
+  margin: 20px;
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 1200px) {
+  .App {
+    padding-top: 4rem; /* Account for fixed navigation bar height */
+  }
+}
+
+@media (max-width: 1199px) {
+  .App {
+    padding-top: 0; /* No navbar on mobile, so no padding needed */
+  }
+}
